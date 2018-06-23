@@ -1,0 +1,7 @@
+.table td, .table th {
+    vertical-align: unset;
+}
+
+.btn.bmd-btn-icon {
+    padding-top: 4px;
+}

@@ -17,17 +17,20 @@
     <!-- stylesheets -->
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="bootstrap/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>bootstrap/bootstrap-material-design.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Other-->
-    <link rel="stylesheet" href="css/styles.css" />
-    <?php if (file_exists("css/$view.css")) echo "<link rel=\"stylesheet\" href=\"css/$view.css\" />"?>
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/styles.css" />
+    <?php if (file_exists("css/$view.css")) echo "<link rel=\"stylesheet\" href=\"". BASE_URL . "css/$view.css\" />"?>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand mb-0 h1" href="#">University</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand mb-0 h1" href="/">University</a>
     <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
         <?php if (isset($_SESSION['user'])) { ?>
             <li class="nav-item dropdown">
                 <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -1,3 +1,4 @@
-#submitLogin {
-    float: right;
+.login-title {
+    margin-left: 0;
+    margin-top: 12px;
 }
