@@ -1,0 +1,59 @@
+/* template */
+body {
+    background-color: #f0f0ff;
+    color: #323434;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+}
+
+.container {
+    padding-top: 0;
+}
+
+.mdl-layout__header-row {
+    padding: 0 24px;
+}
+
+/*Actions*/
+.action-container {
+    padding: 1rem 1rem 0 1rem;
+}
+
+.action {
+    background: #FFFFFF;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    border-radius: 8px;
+}
+
+.action-icon {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-size: 96px;
+}
+
+.action-text {
+    margin-bottom: 2.5rem; font-size: 24px;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    .container {
+        margin-top: 2rem;
+    }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .container {
+        margin-top: 3rem;
+    }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .container {
+        margin-top: 5rem;
+    }
+}
