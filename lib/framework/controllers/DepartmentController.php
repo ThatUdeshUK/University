@@ -38,7 +38,7 @@ class DepartmentController
         }, $departments);
 
         $this->view->data['departments'] = $departments;
-        $this->view->load('department');
+        $this->view->load('department/department');
     }
 
     public function edit($id = false, $action = false)
@@ -78,7 +78,7 @@ class DepartmentController
             $professorModel = $this->model->build('professor', true);
             $this->view->data['professors'] = $professorModel->getProfessors();
 
-            $this->view->load('add-edit-department', $form);
+            $this->view->load('department/add-edit-department', $form);
         } else {
             (new Router())->redirect('department');
         }
@@ -116,7 +116,7 @@ class DepartmentController
         $professorModel = $this->model->build('professor', true);
         $this->view->data['professors'] = $professorModel->getProfessors();
 
-        $this->view->load('add-edit-department', $form);
+        $this->view->load('department/add-edit-department', $form);
     }
 
     public function delete($id = false)

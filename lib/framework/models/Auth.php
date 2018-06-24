@@ -14,7 +14,7 @@ class Auth
     public function authenticateUser($user, $pass) {
         $user = mysqli_escape_string($this->db, $user);
         $pass = mysqli_escape_string($this->db, $pass);
-        $sql = "SELECT username, 'type', id FROM auth WHERE username = '$user' AND password = '$pass'";
+        $sql = "SELECT username, `type`, id FROM auth WHERE username = '$user' AND password = '$pass'";
         $result = $this->db->query($sql);
         if ($result)
             return $result->fetch_assoc();

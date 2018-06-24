@@ -18,12 +18,30 @@ class AuthHandler
         }
     }
 
+    public static function checkMultiSpecificAuth($types)
+    {
+        $flag = false;
+        foreach ($types as $type) {
+            if (isset($_SESSION['user']) && isset($_SESSION['type']) && $_SESSION['type'] == $type) {
+                $flag = true;
+            }
+        }
+        if (!$flag)
+            (new Router())->redirect('');
+    }
+
     public static function checkLoginAuth()
     {
         if (isset($_SESSION['user'])) {
             (new Router())->redirect('');
         }
     }
+
+    public static function isSpecificAuth($type)
+    {
+        return isset($_SESSION['user']) && isset($_SESSION['type']) && $_SESSION['type'] == $type;
+    }
+
 
     public static function login($user)
     {
