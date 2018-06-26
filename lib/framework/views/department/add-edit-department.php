@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <label for="inputName" class="bmd-label-floating">Department Name</label>
                             <input type="text" class="form-control" name="name" id="inputName" value="<?php if (isset($department)) echo $department['d_name']; ?>" required>
-                            <div class="invalid-feedback">Departmnet name is required</div>
+                            <div class="invalid-feedback">Department name is required</div>
                         </div>
                         <div class="form-group">
                             <label for="inputPhone" class="bmd-label-floating">Phone</label>

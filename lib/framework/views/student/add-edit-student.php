@@ -26,12 +26,12 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="inputName" class="bmd-label-floating">Name</label>
-                            <input type="text" class="form-control" name="name" id="inputName" value="<?php if (isset($student)) echo $student['name']; ?>">
+                            <input type="text" class="form-control" name="name" id="inputName" value="<?php if (isset($student)) echo $student['name']; ?>" required>
                             <div class="invalid-feedback">Name is required</div>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress" class="bmd-label-floating">Address</label>
-                            <input type="text" class="form-control" name="address" id="inputAddress" value="<?php if (isset($student)) echo $student['address']; ?>">
+                            <input type="text" class="form-control" name="address" id="inputAddress" value="<?php if (isset($student)) echo $student['address']; ?>" required>
                             <div class="invalid-feedback">Address is required</div>
                         </div>
                         <div class="form-group">
@@ -44,13 +44,13 @@
                         <?php  if ($this->data['type'] == "graduate") { ?>
                         <div class="form-group">
                             <label for="inputUGMajor" class="bmd-label-floating">Undergraduate Major</label>
-                            <input type="text" class="form-control" name="ug_major" id="inputUGMajor" value="<?php if (isset($student)) echo $student['ug_major']; ?>">
+                            <input type="text" class="form-control" name="ug_major" id="inputUGMajor" value="<?php if (isset($student)) echo $student['ug_major']; ?>" required>
                             <div class="invalid-feedback">Undergraduate major is required</div>
                         </div>
                         <?php  } else if ($this->data['type'] == "nonMatriculating") { ?>
                         <div class="form-group">
                             <label for="inputStudyHours" class="bmd-label-floating">Study Hours</label>
-                            <input type="text" class="form-control" name="study_hours" id="inputStudyHours" value="<?php if (isset($student)) echo $student['study_hours']; ?>">
+                            <input type="text" class="form-control" name="study_hours" id="inputStudyHours" value="<?php if (isset($student)) echo $student['study_hours']; ?>" required>
                             <div class="invalid-feedback">Study hours is required</div>
                         </div>
                         <?php  } ?>

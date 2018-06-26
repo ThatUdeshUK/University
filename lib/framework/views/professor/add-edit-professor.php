@@ -22,17 +22,17 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="inputName" class="bmd-label-floating">Name</label>
-                            <input type="text" class="form-control" name="name" id="inputName" value="<?php if (isset($professor)) echo $professor['p_name']; ?>">
+                            <input type="text" class="form-control" name="name" id="inputName" value="<?php if (isset($professor)) echo $professor['p_name']; ?>" required>
                             <div class="invalid-feedback">Name is required</div>
                         </div>
                         <div class="form-group">
                             <label for="inputPhone" class="bmd-label-floating">Phone</label>
-                            <input type="text" class="form-control" name="phone" id="inputPhone" value="<?php if (isset($professor)) echo $professor['phone']; ?>">
+                            <input type="text" class="form-control" name="phone" id="inputPhone" value="<?php if (isset($professor)) echo $professor['phone']; ?>" required>
                             <div class="invalid-feedback">Phone is required</div>
                         </div>
                         <div class="form-group">
                             <label for="inputOffice" class="bmd-label-floating">Office</label>
-                            <input type="text" class="form-control" name="office" id="inputOffice" value="<?php if (isset($professor)) echo $professor['office']; ?>">
+                            <input type="text" class="form-control" name="office" id="inputOffice" value="<?php if (isset($professor)) echo $professor['office']; ?>" required>
                             <div class="invalid-feedback">Office is required</div>
                         </div>
                         <div class="form-group">

@@ -22,22 +22,22 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="inputName" class="bmd-label-floating">Name</label>
-                            <input type="text" class="form-control" name="name" id="inputName" value="<?php if (isset($course['name'])) echo $course['name']; ?>">
+                            <input type="text" class="form-control" name="name" id="inputName" value="<?php if (isset($course['name'])) echo $course['name']; ?>" required>
                             <div class="invalid-feedback">Name is required</div>
                         </div>
                         <div class="form-group">
                             <label for="inputCredit" class="bmd-label-floating">Credit</label>
-                            <input type="text" class="form-control" name="credit" id="inputCredit" value="<?php if (isset($course['credit'])) echo $course['credit']; ?>">
+                            <input type="text" class="form-control" name="credit" id="inputCredit" value="<?php if (isset($course['credit'])) echo $course['credit']; ?>" required>
                             <div class="invalid-feedback">Credit is required</div>
                         </div>
                         <div class="form-group">
                             <label for="inputHours" class="bmd-label-floating">Hours</label>
-                            <input type="text" class="form-control" name="hours" id="inputHours" value="<?php if (isset($course['hours'])) echo $course['hours']; ?>">
+                            <input type="text" class="form-control" name="hours" id="inputHours" value="<?php if (isset($course['hours'])) echo $course['hours']; ?>" required>
                             <div class="invalid-feedback">Hours is required</div>
                         </div>
                         <div class="form-group">
                             <label for="inputCollege" class="bmd-label-floating">College</label>
-                            <input type="text" class="form-control" name="college" id="inputCollege" value="<?php if (isset($course['college'])) echo $course['college']; ?>">
+                            <input type="text" class="form-control" name="college" id="inputCollege" value="<?php if (isset($course['college'])) echo $course['college']; ?>" required>
                             <div class="invalid-feedback">College is required</div>
                         </div>
                         <div class="form-group">
