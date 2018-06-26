@@ -39,7 +39,7 @@
                     <div class="ripple-container"></div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-                    <a class="dropdown-item" href="logout">SIGN OUT</a>
+                    <a class="dropdown-item" href="<?php echo BASE_URL?>logout">SIGN OUT</a>
                 </div>
             </li>
         <?php } ?>

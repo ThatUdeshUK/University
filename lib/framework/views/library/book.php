@@ -3,7 +3,7 @@
         <div class="card-header">
             <h5 class="card-title">
                 Books
-                <a href="library/addBook" class="btn btn-raised btn-info ml-2">ADD BOOK</a>
+                <?php if ($this->data['can_edit']) { ?><a href="library/addBook" class="btn btn-raised btn-info ml-2">ADD BOOK</a><?php } ?>
             </h5>
         </div>
         <div class="card-body">

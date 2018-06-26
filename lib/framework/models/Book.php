@@ -58,9 +58,28 @@ class Book
         return DBUtils::getAssocArray($result);
     }
 
+    public function getBorrowedBooksBy($s_id)
+    {
+        $result = $this->db->query("select * from borrow_book AS bb INNER JOIN  book AS b ON b.b_id = bb.b_id WHERE bb.s_id = $s_id");
+        return DBUtils::getAssocArray($result);
+    }
+
+    public function getBorrowedStudents($b_id)
+    {
+        $result = $this->db->query("select * from borrow_book AS bb INNER JOIN student AS s ON bb.s_id = s.s_id WHERE bb.b_id = $b_id");
+        return DBUtils::getAssocArray($result);
+    }
+
     public function borrowBook($b_id, $s_id)
     {
-        $sql = "insert into borrow_book values ('". $b_id ."','". $s_id ."')";
+        $sql = "insert into borrow_book (b_id, s_id) values ('". $b_id ."','". $s_id ."')";
+        $result = $this->db->query($sql);
+        return $result;
+    }
+
+    public function returnBook($b_id, $s_id)
+    {
+        $sql = "update borrow_book set `return_date` = CURRENT_TIMESTAMP() where b_id = " . $b_id . " AND  s_id =" . $s_id;
         $result = $this->db->query($sql);
         return $result;
     }

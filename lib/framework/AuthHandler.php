@@ -42,6 +42,13 @@ class AuthHandler
         return isset($_SESSION['user']) && isset($_SESSION['type']) && $_SESSION['type'] == $type;
     }
 
+    public static function getCurrentID()
+    {
+        if (isset($_SESSION['user']) && isset($_SESSION['id']))
+            return $_SESSION['id'];
+        else
+            return false;
+    }
 
     public static function login($user)
     {

@@ -51,20 +51,21 @@ class ProfessorController
 
             $model = $this->model->build('professor', true);
 
-            $form = new FormHandler();
-            if ($action) {
+            if ($action == "error") {
+                $this->view->data['error'] = "Invalid Inputs.";
+            } else if ($action) {
                 if ($action != 'validate') {
                     (new Router)->notFound();
                 }
-                if (isset($_POST['code']) && isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['office']) && isset($_POST['d_code'])) {
+                if (!empty($_POST['code']) && !empty($_POST['name']) && !empty($_POST['phone']) && !empty($_POST['office']) && !empty($_POST['d_code'])) {
                     $result = $model->updateProfessor($_POST['code'], $_POST['name'], $_POST['phone'], $_POST['office'], $_POST['d_code']);
                     if ($result) {
                         (new Router())->redirect("professor");
                     } else {
-                        (new Router())->redirect("professor");
+                        (new Router())->redirect("professor/edit/$id/error");
                     }
                 } else {
-                    (new Router())->redirect("professor/edit/$id");
+                    (new Router())->redirect("professor/edit/$id/error");
                 }
             }
 
@@ -74,7 +75,7 @@ class ProfessorController
             $departmentModel = $this->model->build('department', true);
             $this->view->data['departments'] = $departmentModel->getDepartments();
 
-            $this->view->load('professor/add-edit-professor', $form);
+            $this->view->load('professor/add-edit-professor');
         } else {
             (new Router())->redirect('professor');
         }
@@ -87,28 +88,29 @@ class ProfessorController
         $this->view->data['page_title'] = 'University';
         $this->view->data['description'] = 'University management system.';
 
-        $form = new FormHandler();
-        if ($action) {
+        if ($action == "error") {
+            $this->view->data['error'] = "Invalid Inputs.";
+        } else if ($action) {
             if ($action != 'validate') {
                 (new Router)->notFound();
             }
-            if (isset($_POST['code']) && isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['office']) && isset($_POST['d_code'])) {
+            if (!empty($_POST['name']) && !empty($_POST['phone']) && !empty($_POST['office']) && !empty($_POST['d_code'])) {
                 $model = $this->model->build('professor', true);
                 $result = $model->addProfessor($_POST['name'], $_POST['phone'], $_POST['office'], $_POST['d_code']);
                 if ($result) {
                     (new Router())->redirect("professor");
                 } else {
-                    (new Router())->redirect("professor");
+                    (new Router())->redirect("professor/add/error");
                 }
             } else {
-                (new Router())->redirect("professor/add");
+                (new Router())->redirect("professor/add/error");
             }
         }
 
         $departmentModel = $this->model->build('department', true);
         $this->view->data['departments'] = $departmentModel->getDepartments();
 
-        $this->view->load('professor/add-edit-professor', $form);
+        $this->view->load('professor/add-edit-professor');
     }
 
     public function delete($id = false)

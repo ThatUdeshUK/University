@@ -90,12 +90,13 @@ class StudentController
 
             $model = $this->model->build('student', true);
 
-            $form = new FormHandler();
-            if ($action) {
+            if ($action == "error") {
+                $this->view->data['error'] = "Invalid Inputs.";
+            } else if ($action) {
                 if ($action != 'validate') {
                     (new Router)->notFound();
                 }
-                if (isset($_POST['s_id']) && isset($_POST['name']) && isset($_POST['address']) && isset($_POST['status'])) {
+                if (!empty($_POST['s_id']) && !empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['status'])) {
                     if ($type == "undergraduate") {
                         $result = $model->updateUGStudent($_POST['s_id'], $_POST['name'], $_POST['address'], $_POST['status']);
                     } else if ($type == "graduate" && isset($_POST['ug_major'])) {
@@ -110,10 +111,10 @@ class StudentController
                         (new Router())->redirect("student/$type");
                     } else {
 //                    echo "fail";
-                        (new Router())->redirect("student/$type");
+                        (new Router())->redirect("student/edit/$type/$id/error");
                     }
                 } else {
-                    (new Router())->redirect("student/edit/$type/$id");
+                    (new Router())->redirect("student/edit/$type/$id/error");
                 }
             }
 
@@ -129,7 +130,7 @@ class StudentController
             $this->view->data['student'] = $student;
             $this->view->data['type'] = $type;
 
-            $this->view->load('student/add-edit-student', $form);
+            $this->view->load('student/add-edit-student');
         } else {
             (new Router())->redirect('student');
         }
@@ -145,12 +146,13 @@ class StudentController
         if (!$type || !($type == "undergraduate" || $type == "graduate" || $type == "nonMatriculating"))
             (new Router())->redirect("student");
 
-        $form = new FormHandler();
-        if ($action) {
+        if ($action == "error") {
+            $this->view->data['error'] = "Invalid Inputs.";
+        } else if ($action) {
             if ($action != 'validate' || !$type) {
                 (new Router)->notFound();
             }
-            if (isset($_POST['name']) && isset($_POST['address']) && isset($_POST['status'])) {
+            if (!empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['status'])) {
                 $model = $this->model->build('student', true);
                 if ($type == "undergraduate") {
                     $result = $model->addUGStudent($_POST['name'], $_POST['address'], $_POST['status']);
@@ -166,16 +168,16 @@ class StudentController
                     (new Router())->redirect("student/$type");
                 } else {
 //                    echo "fail";
-                    (new Router())->redirect("student/$type");
+                    (new Router())->redirect("student/add/$type/error");
                 }
             } else {
-                (new Router())->redirect("student/$type");
+                (new Router())->redirect("student/add/$type/error");
             }
         }
 
         $this->view->data['type'] = $type;
 
-        $this->view->load('student/add-edit-student', $form);
+        $this->view->load('student/add-edit-student');
     }
 
     public function delete($type = false, $id = false)

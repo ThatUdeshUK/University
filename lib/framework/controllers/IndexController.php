@@ -31,7 +31,6 @@ class IndexController
     public function login($action = false)
     {
         AuthHandler::checkLoginAuth();
-        $form = new FormHandler();
         if ($action) {
             if ($action != 'check') {
                 (new Router)->notFound();
@@ -49,11 +48,12 @@ class IndexController
         $this->view->data['page_title'] = 'University';
         $this->view->data['description'] = 'University management system.';
 //        $this->view->data['keywords'] = '';
-        $this->view->load('login', $form);
+        $this->view->load('login');
     }
 
     public function logout()
     {
+        AuthHandler::checkAuth();
         AuthHandler::logout();
         (new Router())->redirect("login");
     }

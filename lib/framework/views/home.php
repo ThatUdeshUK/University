@@ -41,16 +41,6 @@
                 </div>
             </a>
         </div>
-        <div class="action-container col-12 col-md-6 col-lg-4">
-            <a href="library/return" class="btn action">
-                <i class="material-icons action-icon">
-                    bookmark_border
-                </i>
-                <div class="action-text">
-                    Return
-                </div>
-            </a>
-        </div>
     <?php } else if($_SESSION['type'] == 'registrar') { ?>
         <div class="action-container col-12 col-md-6 col-lg-4">
             <a href="student/undergraduate" class="btn action">
@@ -79,6 +69,38 @@
                 </i>
                 <div class="action-text">
                     Non Matriculating
+                </div>
+            </a>
+        </div>
+    <?php } else if($_SESSION['type'] == 'student') { ?>
+        <div class="action-container col-12 col-md-6 col-lg-4">
+            <a href="course" class="btn action">
+                <i class="material-icons action-icon">
+                    info
+                </i>
+                <div class="action-text">
+                    Courses
+                </div>
+            </a>
+        </div>
+        <div class="action-container col-12 col-md-6 col-lg-4">
+            <a href="library/borrowedBooks" class="btn action">
+                <i class="material-icons action-icon">
+                    book
+                </i>
+                <div class="action-text">
+                    Books
+                </div>
+            </a>
+        </div>
+    <?php } else if($_SESSION['type'] == 'professor') { ?>
+        <div class="action-container col-12 col-md-6 col-lg-4">
+            <a href="course" class="btn action">
+                <i class="material-icons action-icon">
+                    info
+                </i>
+                <div class="action-text">
+                    Courses
                 </div>
             </a>
         </div>
