@@ -1,7 +1,10 @@
 <div class="row">
     <div class="card w-100">
         <div class="card-header">
-            <h5 class="card-title"><?php if (isset($this->data['department'])) echo "Edit"; else echo "Add"; ?> Department</h5>
+            <h5 class="card-title">
+                <a href="<?php echo BASE_URL;?>department" class="btn btn-secondary bmd-btn-icon"><i class="material-icons">arrow_back</i></a>&nbsp;
+                <?php if (isset($this->data['department'])) echo "Edit"; else echo "Add"; ?> Department
+            </h5>
         </div>
         <? if (isset($this->data['error'])) { ?>
             <div class="alert alert-danger" role="alert">

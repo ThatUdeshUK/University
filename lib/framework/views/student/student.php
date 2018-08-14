@@ -2,6 +2,7 @@
     <div class="card w-100">
         <div class="card-header">
             <h5 class="card-title">
+                <a href="<?php echo BASE_URL;?>" class="btn btn-secondary bmd-btn-icon"><i class="material-icons">arrow_back</i></a>&nbsp;
                 <?php  if ($this->data['type'] == "graduate") { ?>
                     Graduate Students
                 <?php  } else if ($this->data['type'] == "nonMatriculating") { ?>

@@ -2,6 +2,7 @@
     <div class="card w-100">
         <div class="card-header">
             <h5 class="card-title">
+                <a href="<?php echo BASE_URL;?>" class="btn btn-secondary bmd-btn-icon"><i class="material-icons">arrow_back</i></a>&nbsp;
                 Books
                 <?php if ($this->data['can_edit']) { ?><a href="library/addBook" class="btn btn-raised btn-info ml-2">ADD BOOK</a><?php } ?>
             </h5>

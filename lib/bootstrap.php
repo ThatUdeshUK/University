@@ -24,18 +24,6 @@ ini_set('session.cookie_lifetime', 0); // 0 = expire when browser is closed
 // ini_set('session.cookie_secure', true);
 
 ##################
-# GLOBALS/HOOKS  #
-##################
-
-// any code that needs to be executed before routing, such as instantiating a user object
-// this is called in Router()->route()
-trait GlobalRepository {
-    private function checkRepository()
-    {
-    }
-}
-
-##################
 # INITIALIZATION #
 ##################
 

@@ -2,7 +2,10 @@
     <div class="col-12 mt-4">
         <div class="card w-100">
             <div class="card-header">
-                <h5 class="card-title">Books borrowed</h5>
+                <h5 class="card-title">
+                    <a href="<?php echo BASE_URL;?>" class="btn btn-secondary bmd-btn-icon"><i class="material-icons">arrow_back</i></a>&nbsp;
+                    Books borrowed
+                </h5>
             </div>
             <div class="card-body">
                 <table class="table">

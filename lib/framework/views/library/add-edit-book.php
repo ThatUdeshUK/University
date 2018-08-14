@@ -2,7 +2,10 @@
     <div class="card w-100">
         <? if (isset($this->data['book'])) $book = $this->data['book']; ?>
         <div class="card-header">
-            <h5 class="card-title"><?php if (isset($book)) echo "Edit"; else echo "Add"; ?> Book</h5>
+            <h5 class="card-title">
+                <a href="<?php echo BASE_URL;?>library" class="btn btn-secondary bmd-btn-icon"><i class="material-icons">arrow_back</i></a>&nbsp;
+                <?php if (isset($book)) echo "Edit"; else echo "Add"; ?> Book
+            </h5>
         </div>
         <? if (isset($this->data['error'])) { ?>
             <div class="alert alert-danger" role="alert">

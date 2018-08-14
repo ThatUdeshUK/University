@@ -26,7 +26,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand mb-0 h1" href="/">University</a>
+    <a class="navbar-brand mb-0 h1" href="/"><i class="material-icons">school</i>University</a>
     <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
         <?php if (isset($_SESSION['user'])) { ?>
             <li class="nav-item active">

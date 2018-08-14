@@ -3,6 +3,7 @@
         <? if (isset($this->data['student'])) $student = $this->data['student']; ?>
         <div class="card-header">
             <h5 class="card-title">
+                <a href="<?php echo BASE_URL . "student/" . $this->data['type'];?>" class="btn btn-secondary bmd-btn-icon"><i class="material-icons">arrow_back</i></a>&nbsp;
                 <?php if (isset($student)) echo "Edit "; else echo "Add "; ?>
                 <?php  if ($this->data['type'] == "graduate") { ?>
                     Graduate Student

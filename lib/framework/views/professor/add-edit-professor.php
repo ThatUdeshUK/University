@@ -2,7 +2,10 @@
     <div class="card w-100">
         <? if (isset($this->data['professor'])) $professor = $this->data['professor']; ?>
         <div class="card-header">
-            <h5 class="card-title"><?php if (isset($professor)) echo "Edit"; else echo "Add"; ?> Professor</h5>
+            <h5 class="card-title">
+                <a href="<?php echo BASE_URL;?>professor" class="btn btn-secondary bmd-btn-icon"><i class="material-icons">arrow_back</i></a>&nbsp;
+                <?php if (isset($professor)) echo "Edit"; else echo "Add"; ?> Professor
+            </h5>
         </div>
         <? if (sizeof($this->data['departments']) < 1) { ?>
             <div class="alert alert-warning" role="alert">

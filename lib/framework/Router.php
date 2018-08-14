@@ -5,7 +5,6 @@ namespace framework;
 class Router
 {
     // controller dependencies
-    use \GlobalRepository;
     private $model;
     private $view;
 
@@ -74,7 +73,6 @@ class Router
         // get required dependencies and peform any last minute checks before routing
         $this->model = new ModelFactory(DB_HOST, DB_NAME, DB_USER, DB_PASS);
         $this->view = new View();
-        $this->checkRepository();
 
         call_user_func_array([new $this->controller($this->model, $this->view, $this), $this->method], $this->params);
     }

@@ -27,6 +27,7 @@
     </div>
 </div>
 <h5 class="card-title">
+    <a href="<?php echo BASE_URL;?>" class="btn btn-secondary bmd-btn-icon"><i class="material-icons">arrow_back</i></a>&nbsp;
     Borrowed Books
     <button type="button" class="btn btn-raised btn-info ml-2"  data-toggle="modal" data-target="#borrowModel">BORROW BOOK</button>
 </h5>
